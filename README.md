@@ -1,154 +1,137 @@
-# SchoolMeal (EduMeal) – Web-based School Meal Management System
+# EduMeal (EMMS) – Web-based School Meal Management System
 
-## 📌 Overview
+## 📌 Capstone Project Information
 
-SchoolMeal (EduMeal) is a **web-based school meal management system** designed to modernize how schools in Vietnam handle meal registration, dietary management, inventory tracking, and communication between staff and parents. The project was developed as part of the Capstone Project (Fall 2025) by the SE29\_FA25\_deptraivodich group.
+SchoolMeal (EduMeal) is a **web-based school meal management system** designed to modernize how schools in Vietnam handle meal registration, dietary management, inventory tracking, and communication between staff and parents. The project was developed as part of the Capstone Project (Fall 2025) by the SE29\_FA25 group.
 
 EduMeal aims to replace inefficient manual processes with a centralized, responsive platform that ensures transparency, reduces food waste, and improves child nutrition management.
 
----
+### Supervisor
 
-## 👨‍💻 Project Information
+| Full Name     | Phone      | Email                                         | Title  |
+| ------------- | ---------- | --------------------------------------------- | ------ |
+| Võ Quốc Trình | 0905558805 | [trinhvq@fe.edu.vn](mailto:trinhvq@fe.edu.vn) | Mentor |
 
-* **Project name:** SchoolMeal (EduMeal)
-* **Project code:** SMMS
-* **Software type:** Web Application
-* **Group:** SE29\_FA25\_deptraivodich
+### Student Team
 
-### Project Team
-
-| Full Name            | Role     | Email                                                             | Mobile     |
-| -------------------- | -------- | ----------------------------------------------------------------- | ---------- |
-| Vo Quoc Trinh        | Lecturer | [trinhvq@fe.edu.vn](mailto:trinhvq@fe.edu.vn)                     | 0905558805 |
-| Phan Minh Thanh      | Member   | [thanhpmde170798@fpt.edu.vn](mailto:thanhpmde170798@fpt.edu.vn)   | 0935087983 |
-| Dang Vinh Xuan Hai   | Member   | [haidvxde170789@fpt.edu.vn](mailto:haidvxde170789@fpt.edu.vn)     | 0911124072 |
-| Le Viet Bao Trung    | Member   | [trunglvbde170769@fpt.edu.vn](mailto:trunglvbde170769@fpt.edu.vn) | 0982441549 |
-| Nguyen Tan Nhat Hung | Member   | [hungntnde170350@fpt.edu.vn](mailto:hungntnde170350@fpt.edu.vn)   | 0843093359 |
-| Van Ngoc Thang       | Member   | [thangvnde180947@fpt.edu.vn](mailto:thangvnde180947@fpt.edu.vn)   | 0947690111 |
+| Full Name            | Student Code | Phone      | Email                                                             | Role   |
+| -------------------- | ------------ | ---------- | ----------------------------------------------------------------- | ------ |
+| Phan Minh Thành      | DE170798     | 0935087983 | [thanhpmde170798@fpt.edu.vn](mailto:thanhpmde170798@fpt.edu.vn)   | Leader |
+| Đặng Vĩnh Xuân Hải   | DE170789     | 0911124072 | [haidvxde170789@fpt.edu.vn](mailto:haidvxde170789@fpt.edu.vn)     | Member |
+| Lê Viết Bảo Trung    | DE170769     | 0982441549 | [trunglvbde170769@fpt.edu.vn](mailto:trunglvbde170769@fpt.edu.vn) | Member |
+| Nguyễn Tấn Nhật Hưng | DE170350     | 0843093359 | [hungntnde170350@fpt.edu.vn](mailto:hungntnde170350@fpt.edu.vn)   | Member |
+| Văn Ngọc Thắng       | DE180947     | 0947690111 | [thangvnde180947@fpt.edu.vn](mailto:thangvnde180947@fpt.edu.vn)   | Member |
 
 ---
 
-## 🏫 Product Background
+## 🏫 Project Background & Context
 
-Many schools in Vietnam still rely on manual processes for meal registration and inventory tracking, leading to inefficiencies and food waste. EduMeal was developed to:
-
-* Centralize meal management
-* Track allergies and preferences
-* Reduce food waste via accurate attendance-linked portions
-* Increase transparency between schools and parents
+* Many primary schools in Vietnam still rely on manual processes for meal registration, dietary management, and inventory tracking, leading to inefficiencies, food waste, and difficulties in managing allergies or preferences.
+* **EduMeal (EMMS)** digitizes the process of school meal management: meal registration, allergy filtering, inventory planning, reporting, and financial management.
+* Integrates with class timetables and student attendance to adjust meal portions dynamically and reduce waste.
 
 ---
 
-## 🔍 Existing Systems & Market Gap
+## 🎯 Objectives
 
-* **Lunchtab:** Strong in logistics & finance but weak in nutrition analysis.
-* **Nutrikid:** Great nutritional insights but lacks real-time management & reporting.
-* **LunchTime Software:** Comprehensive but tailored to U.S. context, not suitable for Vietnam.
-
-➡️ **Opportunity:** EduMeal combines the strengths of these systems while addressing the specific needs of Vietnamese schools.
-
----
-
-## 🚀 Business Opportunity
-
-* Rising parental concerns on child nutrition & food safety.
-* Schools undergoing **digital transformation**.
-* Government push for educational digitalization.
-
-EduMeal provides a **scalable, transparent, and intelligent platform** that benefits admins, teachers, kitchen staff, parents, and principals.
+* Centralize school meal management for admins, teachers, parents, and kitchen staff.
+* Support allergy detection and personalized nutrition planning.
+* Automate inventory and procurement calculations.
+* Provide dashboards, real-time reports, and financial summaries.
+* Deliver a responsive, mobile-optimized bilingual (Vietnamese & English) interface.
 
 ---
 
-## 🎯 Software Product Vision
+## 🛠️ Technology Stack
 
-EduMeal is a **centralized, intelligent, and multilingual system** that:
-
-* Provides nutrition-aware meal planning
-* Tracks inventory & purchases
-* Allows parents to register, pay, and monitor meals
-* Ensures communication between parents, teachers, and kitchen staff
-* Reduces errors and food waste
+* **Frontend:** Next.js, Tailwind CSS ([Frontend Repo](https://github.com/dangvinhxuanhai/SMMS-SchoolMeal-FrontEnd))
+* **Backend:** ASP.NET Core Web API, SQL Server ([Backend Repo](https://github.com/dangvinhxuanhai/SMMS-SchoolMeal-BackEnd))
+* **Database:** SQL Server
+* **Deployment:** Vercel (FE), DigitalOcean (BE & DB)
+* **Version Control:** Git & GitHub
+* **AI Services:** OpenAI API, Azure AI, Google Gemini (for menu planning, allergen detection, procurement estimation)
 
 ---
 
 ## 📌 System Actors & Workflows
 
-### 1. **Admin**
+### 1. Admin
 
-* Create school & generate invite code
-* Manage teacher accounts (ban/unban)
-* Update contact info
-* CRUD notifications (send to roles/classes)
-* View system-wide statistical reports
+* Create school & generate invite code for teachers.
+* Manage accounts (ban/unban teachers & parents).
+* Update contact info and school-wide settings.
+* CRUD notifications (send to roles/classes).
+* View statistical reports (meals, attendance, revenue, allergies).
 
-### 2. **Principal**
+### 2. Principal
 
-* Manage teacher/kitchen/market staff accounts
-* Manage invite codes for internal staff
-* View school-specific reports
-* Send announcements to roles/classes
-* Bulk or single student import (Excel upload or manual entry)
+* Manage teacher, kitchen, and market staff accounts.
+* Generate/manage invite codes for staff.
+* Import students (bulk Excel or single entry).
+* View school-specific reports.
+* Send internal notifications.
 
-### 3. **Teacher**
+### 3. Teacher
 
-* Create classes & import student list
-* View meal schedule per class/day
-* Manage student info (attendance, BMI, allergies)
-* Report meal incidents
-* Manage student photo albums
+* Create classes & import students.
+* View class rosters and meal schedules.
+* Manage student info (attendance, BMI, allergies).
+* Report meal incidents.
+* Manage student image gallery.
 
-### 4. **Kitchen Staff**
+### 4. Kitchen Staff
 
-* Manage inventory (CRUD)
-* Maintain food library
-* Build weekly menus
-* Plan purchases & export ingredient lists
+* CRUD inventory and track expiration.
+* Maintain food library with nutritional values.
+* Build weekly menus.
+* Plan purchases & export ingredient lists.
 
-### 5. **Market Staff**
+### 5. Market Staff
 
-* View inventory, food library, and weekly menu
-* Access purchase plans & export Excel shopping lists
+* View inventory, food library, and menus.
+* Export purchase plans with allergen notes.
 
-### 6. **Parents**
+### 6. Parents
 
-* Register and pay for meals
-* Update personal & child profiles
-* Track BMI and growth charts
-* View weekly menus & allergen details
-* Send feedback to teachers/kitchen
-* View invoices & payment status
+* Register and pay for meals.
+* Update parent/child profiles.
+* Track BMI growth charts.
+* View weekly menus and allergen details.
+* Submit feedback/ratings.
+* View invoices and payment status.
 
 ---
 
-## 🛠️ Major Features
+## 📊 Expected Features
 
-* **Meal Registration & Attendance-Linked Portions (FE-01)**
-* **Purchase Planning & Inventory Management (FE-01’, FE-05)**
-* **Account & Notification Management (FE-02, FE-08)**
-* **Student Profiles & Health Tracking (FE-03, FE-13, FE-14)**
-* **Food Library & Menu Builder (FE-04, FE-12)**
-* **Feedback & Invoices (FE-06, FE-09)**
-* **Reports & Analytics (FE-07)**
-* **Bilingual Interface & Search (FE-10, FE-11)**
-* **Role-Based Access Control (FE-15)**
+* Meal Registration & Attendance-linked Portioning
+* User Management (ban/unban, profile updates)
+* Student Profile (allergies, BMI, preferences)
+* AI-assisted Menu & Purchase Planning
+* Inventory Management (stock control, expiration)
+* Feedback & Ratings
+* Reporting & Analytics (nutrition, finance, attendance)
+* Notifications (meal cutoff, allergen alerts)
+* Invoice & Payment (PAYOS gateway with QR code)
+* Multilingual Support (Vietnamese & English)
+* Smart Search & Indexing (autocomplete, fuzzy search)
+* Food Library (nutritional data per 100g)
+* Class Management (assign students, track metrics)
+* Secure Student Image Gallery
+* Authentication (OTP, Google login, role-based access)
 
 ---
 
 ## ⚙️ Installation & Setup
 
-### 🔗 Source Code
+### Requirements
 
-* **Frontend (React):** [SMMS-SchoolMeal-FrontEnd](https://github.com/dangvinhxuanhai/SMMS-SchoolMeal-FrontEnd)
-* **Backend (Node.js/Express):** [SMMS-SchoolMeal-BackEnd](https://github.com/dangvinhxuanhai/SMMS-SchoolMeal-BackEnd)
-
-### 1. Requirements
-
-* Node.js >= 18
-* npm hoặc yarn
-* MySQL / PostgreSQL
+* Node.js >= 18 (for FE)
+* .NET 8 SDK (for BE)
+* SQL Server
 * Git
 
-### 2. Clone repositories
+### 1. Clone Repositories
 
 ```bash
 git clone https://github.com/dangvinhxuanhai/SMMS-SchoolMeal-FrontEnd.git
@@ -160,17 +143,17 @@ git clone https://github.com/dangvinhxuanhai/SMMS-SchoolMeal-BackEnd.git
 cd SMMS-SchoolMeal-BackEnd
 ```
 
-### 3. Backend Setup
+### 2. Backend Setup
 
 ```bash
 cd SMMS-SchoolMeal-BackEnd
-npm install
-cp .env.example .env   # chỉnh sửa config database (MySQL/Postgres)
-npm run migrate
-npm start
+dotnet restore
+cp appsettings.example.json appsettings.json   # chỉnh sửa cấu hình SQL Server
+dotnet ef database update
+dotnet run
 ```
 
-### 4. Frontend Setup
+### 3. Frontend Setup
 
 ```bash
 cd SMMS-SchoolMeal-FrontEnd
@@ -178,45 +161,48 @@ npm install
 npm run dev
 ```
 
-### 5. Access Application
+### 4. Access Application
 
-Mở [http://localhost:3000](http://localhost:3000) trên trình duyệt để truy cập giao diện.
-
----
-
-## 📊 Reporting & Deliverables
-
-* Statistical reports (attendance, revenue, allergies, nutrition)
-* Export options: **Excel / PDF** for authorities or principals
+Mở [http://localhost:3000](http://localhost:3000) trên trình duyệt.
 
 ---
 
-## ⚠️ Limitations (Current Scope)
+## ⚠️ Limitations (Phase 1)
 
-* No native Android/iOS app (web responsive only)
-* Limited to Vietnamese primary schools in phase 1
-* External AI API integrations only (no in-house training)
-* Payment gateway simulated, not fully integrated
-* No IoT device integration (future scope)
+* Only responsive web app (no native Android/iOS).
+* Focused on Vietnamese primary schools.
+* Payment gateway semi-simulated (PAYOS integration in progress).
+* No IoT device integration in this phase.
 
 ---
 
-## 📂 Project Structure (Proposed)
+## 📂 Project Structure
 
 ```
-SchoolMeal/
-├── docs/                 # Project documents & reports
-├── frontend/             # React/Next.js web app
-├── backend/              # Node.js/Express API
-├── database/             # SQL schema & migrations
+EduMeal/
+├── docs/                 # Reports & documentation
+├── frontend/             # Next.js web app
+├── backend/              # ASP.NET Core Web API
+├── database/             # SQL Server schema & migrations
 ├── assets/               # Food images, icons
 └── README.md             # This file
 ```
 
 ---
 
+## 🧠 AI Integration Plan
+
+* Use external AI APIs (OpenAI, Azure, Gemini) for:
+
+  * Menu planning optimization
+  * Allergen detection & alerts
+  * Procurement calculations based on menus & attendance
+* AI in development process: requirements analysis, testing, and CI/CD automation.
+
+---
+
 ## 🏁 Conclusion
 
-EduMeal addresses the **real-world challenges of school meal management in Vietnam** by integrating logistics, nutrition, and communication into one web platform. The system benefits **all stakeholders**: parents, teachers, kitchen staff, principals, and administrators.
+EduMeal (EMMS) is a **centralized, intelligent, and bilingual school meal management system** addressing inefficiencies in Vietnamese schools. It digitizes workflows for parents, teachers, admins, and kitchens, reducing food waste, improving nutrition, and increasing transparency.
 
-Future directions include **mobile app development, IoT integration, and advanced AI-powered nutrition planning**.
+Future extensions: **mobile app, IoT kitchen integration, advanced AI-powered nutrition planning**.
