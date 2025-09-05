@@ -1,4 +1,3 @@
-// data/constants.ts
 import { FoodItem, Feature, TeamMember, Slide } from "@/types";
 
 export const FOOD_ITEMS: FoodItem[] = [
@@ -66,18 +65,18 @@ export const TEAM_MEMBERS: TeamMember[] = [
 
 export const slides = [
   {
-    image: "/fptschool.jpg",
+    image: "/anh_banner1.jpg",
   },
   {
-    image: "/thựcđơn.png"
+    image: "/anh_banner2.jpg",
   },
   {
-    image: "/thựcđơn.png",
+    image: "/anh_banner3.jpg",
   },
   {
-    image: "/thựcđơn.png",
+    image: "/anh_banner4.jpg",
   },
   {
-    image: "/thựcđơn.png",
+    image: "/anh_banner5.jpg",
   },
 ];

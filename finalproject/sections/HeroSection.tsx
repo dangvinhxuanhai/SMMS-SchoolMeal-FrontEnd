@@ -104,7 +104,7 @@ export default function HeroSection() {
       </Swiper>
 
       <div className="absolute inset-0 flex items-center px-12 lg:px-20 z-10 pointer-events-none">
-        <div className="max-w-2xl text-left text-white">
+        <div className="max-w-2xl text-left text-white pointer-events-auto">
           <h1
             ref={headingRef}
             className="text-6xl lg:text-7xl font-bold mb-6 drop-shadow-2xl leading-tight"
@@ -120,7 +120,7 @@ export default function HeroSection() {
             Đặt cơm ngon, theo dõi dinh dưỡng và tận hưởng những bữa ăn bổ dưỡng
             mỗi ngày một cách dễ dàng và tiện lợi.
           </p>
-          <button className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg shadow-xl transition-all duration-300 transform hover:scale-105 text-lg">
+          <button className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg shadow-xl transition-transform duration-300 ease-in-out hover:scale-110 active:scale-95 text-lg">
             Đặt cơm ngay
           </button>
         </div>
