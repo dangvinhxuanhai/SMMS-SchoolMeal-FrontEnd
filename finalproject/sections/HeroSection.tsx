@@ -70,13 +70,13 @@ export default function HeroSection() {
   }, [loading]);
 
   return (
-    <section className="relative w-full h-[800px] overflow-hidden rounded-2xl shadow-lg">
+    <section className="relative w-full h-[600px] overflow-hidden rounded-2xl shadow-lg">
       <Swiper
         modules={[Autoplay, EffectFade, Pagination, Navigation]}
         autoplay={{
           delay: 4000,
           disableOnInteraction: false,
-          pauseOnMouseEnter: false,
+          pauseOnMouseEnter: false
         }}
         effect="fade"
         fadeEffect={{ crossFade: true }}
