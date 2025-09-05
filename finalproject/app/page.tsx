@@ -4,7 +4,7 @@ import MainContent from "@/components/layouts/MainContent";
 import Footer from "@/components/layouts/Footer";
 import { FOOD_ITEMS, FEATURES, TEAM_MEMBERS } from "@/data/constants";
 
-const SchoolMeal: React.FC = () => {
+const RootLayout: React.FC = () => {
   return (
     <div
       className="relative min-h-screen flex flex-col"
@@ -25,4 +25,4 @@ const SchoolMeal: React.FC = () => {
   );
 };
 
-export default SchoolMeal;
+export default RootLayout;

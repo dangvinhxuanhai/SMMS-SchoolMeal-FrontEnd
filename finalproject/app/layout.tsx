@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description: "SchoolMeal - Dinh dưỡng cho bé yêu",
 };
 
-export default function RootLayout({
+export default function SchoolMeal({
   children,
 }: {
   children: React.ReactNode;

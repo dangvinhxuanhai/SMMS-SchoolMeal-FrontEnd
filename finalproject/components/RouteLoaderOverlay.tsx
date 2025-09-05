@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import Loader from "@/components/Loader";
+import Loader from "@/app/loading";
 import { useLoading } from "@/context/LoadingContext";
 
 export default function RouteLoaderOverlay() {
