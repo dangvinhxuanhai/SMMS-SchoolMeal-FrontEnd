@@ -1,19 +1,19 @@
 // data/constants.ts
-import { FoodItem, Feature, TeamMember, Slide } from "@/components/types";
+import { FoodItem, Feature, TeamMember, Slide } from "@/types";
 
 export const FOOD_ITEMS: FoodItem[] = [
   {
-    image: "https://via.placeholder.com/300x200?text=Salad+Rau+Củ",
+    image: "/thực đơn.png",
     title: "Salad Rau Củ",
     description: "Rau tươi giòn, đầy vitamin, bé ăn là mê!",
   },
   {
-    image: "https://via.placeholder.com/300x200?text=Cơm+Gà+Nướng",
+    image: "/thực đơn.png",
     title: "Cơm Gà Nướng",
     description: "Gà nướng thơm lừng, mềm ngon, đủ chất.",
   },
   {
-    image: "https://via.placeholder.com/300x200?text=Chè+Đậu+Xanh",
+    image: "/thực đơn.png",
     title: "Chè Đậu Xanh",
     description: "Món tráng miệng ngọt ngào, bổ dưỡng.",
   },
@@ -64,38 +64,20 @@ export const TEAM_MEMBERS: TeamMember[] = [
   },
 ];
 
-export const slides: Slide[] = [
+export const slides = [
   {
-    title: "Bữa Ăn Vui Vẻ",
-    subtitle: "Bé Khỏe Mạnh Hơn!",
-    description:
-      "Bố mẹ dễ dàng đăng ký bữa ăn ngon và đủ chất cho bé mỗi ngày.",
     image: "/fptschool.jpg",
   },
   {
-    title: "Thực Đơn Đa Dạng",
-    subtitle: "Dinh Dưỡng Cân Bằng!",
-    description:
-      "Khám phá các món ăn hấp dẫn được chế biến theo tiêu chuẩn dinh dưỡng.",
-    image: "/thực đơn.png",
+    image: "/thựcđơn.png"
   },
   {
-    title: "An Toàn Vệ Sinh",
-    subtitle: "Chất Lượng Hàng Đầu!",
-    description: "Cam kết thực phẩm sạch, an toàn cho sức khỏe của bé yêu.",
-    image: "https://via.placeholder.com/400x300?text=Slide+3",
+    image: "/thựcđơn.png",
   },
   {
-    title: "Dịch Vụ Tận Tâm",
-    subtitle: "Phục Vụ Chu Đáo!",
-    description: "Đội ngũ chuyên nghiệp luôn sẵn sàng hỗ trợ bố mẹ 24/7.",
-    image: "https://via.placeholder.com/400x300?text=Slide+4",
+    image: "/thựcđơn.png",
   },
   {
-    title: "Giá Cả Hợp Lý",
-    subtitle: "Tiết Kiệm Chi Phí!",
-    description:
-      "Những bữa ăn chất lượng cao với mức giá phù hợp với mọi gia đình.",
-    image: "https://via.placeholder.com/400x300?text=Slide+5",
+    image: "/thựcđơn.png",
   },
 ];

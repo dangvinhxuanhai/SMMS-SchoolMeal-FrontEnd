@@ -1,9 +1,8 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import Loader from "@/components/Loader";
 import "./globals.css";
 import { Merriweather } from "next/font/google";
+import type { Metadata } from "next";
+import { LoadingProvider } from "@/context/LoadingContext";
+import RouteLoaderOverlay from "@/components/RouteLoaderOverlay";
 
 const merriweather = Merriweather({
   subsets: ["latin"],
@@ -11,18 +10,16 @@ const merriweather = Merriweather({
   variable: "--font-merriweather",
 });
 
+export const metadata: Metadata = {
+  title: "SchoolMeal",
+  description: "SchoolMeal - Dinh dưỡng cho bé yêu",
+};
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1400);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <html lang="en">
       <body
@@ -30,13 +27,10 @@ export default function RootLayout({
         style={{ fontFamily: "var(--font-merriweather)" }}
         suppressHydrationWarning={true}
       >
-        {loading ? (
-          <div className="flex items-center justify-center h-screen">
-            <Loader />
-          </div>
-        ) : (
-          children
-        )}
+        <LoadingProvider>
+          {children}
+          <RouteLoaderOverlay />
+        </LoadingProvider>
       </body>
     </html>
   );

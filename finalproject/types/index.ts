@@ -19,6 +19,7 @@ export interface TeamMember {
 export interface NavigationItem {
   label: string;
   href: string;
+  icon?: string;
 }
 
 export interface MainContentProps {
@@ -44,4 +45,9 @@ export interface Slide {
   subtitle: string;
   description: string;
   image: string;
+}
+
+export interface LoadingContextType {
+  loading: boolean;
+  setLoading: (loading: boolean) => void;
 }

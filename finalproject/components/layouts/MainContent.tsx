@@ -1,23 +1,20 @@
 import React from "react";
-import { MainContentProps } from "@/components/types";
-import HeroSection from "@/components/sections/HeroSection";
-import FeatureSection from "@/components/sections/FeatureSection";
-import FoodCarousel from "@/components/sections/FoodCarousel";
-import TeamSection from "@/components/sections/TeamSection";
-import CTASection from "@/components/sections/CTASection";
+import { MainContentProps } from "@/types";
+import Slider from "@/sections/Slider";
+import FoodCarousel from "@/sections/FoodCarousel";
+import HeroSection from "../../sections/HeroSection";
 
-const MainContent: React.FC<MainContentProps> = ({
-  foodItems,
-  features,
-  teamMembers,
-}) => {
+const MainContent: React.FC<MainContentProps> = ({ foodItems}) => {
   return (
-    <main className="max-w-7xl mx-auto px-5 py-10">
-      <HeroSection />
-      <FeatureSection features={features} />
-      <FoodCarousel foodItems={foodItems} />
-      <TeamSection teamMembers={teamMembers} />
-      <CTASection />
+    <main>
+      <div className="pt-[100px]">
+        <HeroSection />
+      </div>
+
+      <Slider />
+      <div className="max-w-7xl mx-auto px-5 py-10">
+        <FoodCarousel foodItems={foodItems} />
+      </div>
     </main>
   );
 };
