@@ -3,6 +3,8 @@ import { Merriweather } from "next/font/google";
 import type { Metadata } from "next";
 import { LoadingProvider } from "@/context/LoadingContext";
 import RouteLoaderOverlay from "@/components/RouteLoaderOverlay";
+import Navbar from "@/components/layouts/Navbar";
+import Footer from "@/components/layouts/Footer";
 
 const merriweather = Merriweather({
   subsets: ["latin"],
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
   description: "SchoolMeal - Dinh dưỡng cho bé yêu",
 };
 
-export default function SchoolMeal({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -25,10 +27,19 @@ export default function SchoolMeal({
       <body
         className={`${merriweather.variable}`}
         style={{ fontFamily: "var(--font-merriweather)" }}
-        suppressHydrationWarning={true}
+        suppressHydrationWarning
       >
         <LoadingProvider>
-          {children}
+          <div
+            className="relative min-h-screen flex flex-col"
+            style={{
+              background: "linear-gradient(135deg, #D3CAE2, #E6C17A)",
+            }}
+          >
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
           <RouteLoaderOverlay />
         </LoadingProvider>
       </body>

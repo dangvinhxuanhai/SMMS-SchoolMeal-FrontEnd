@@ -11,12 +11,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const navRef = useRef<HTMLElement>(null);
   const logoBoxRef = useRef<HTMLDivElement>(null);
   const logoTextRef = useRef<HTMLSpanElement>(null);
   const taglineRef = useRef<HTMLSpanElement>(null);
-  const navContainerRef = useRef<HTMLDivElement>(null);
+  const lastScrollY = useRef(0);
+  const [showNav, setShowNav] = useState(true);
 
   const navigationItems: NavigationItem[] = [
     { label: "Trang chủ", href: "/" },
@@ -25,47 +24,30 @@ const Navbar: React.FC = () => {
     { label: "Liên hệ", href: "/contact" },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
+        setShowNav(false);
+      } else {
+        setShowNav(true);
+      }
+      lastScrollY.current = currentScrollY;
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const handleMobileMenuClose = () => {
     setIsMenuOpen(false);
   };
 
   useEffect(() => {
-    const nav = navRef.current;
     const logoBox = logoBoxRef.current;
     const logoText = logoTextRef.current;
     const tagline = taglineRef.current;
-    const navContainer = navContainerRef.current;
 
-    if (!nav || !logoBox || !logoText || !tagline || !navContainer) return;
-
-    const navTween = gsap.to(nav, {
-      backgroundColor: "rgba(255, 255, 255, 0.95)",
-      backdropFilter: "blur(20px)",
-      boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
-      duration: 0.6,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: document.documentElement,
-        start: "top -20",
-        end: "bottom top",
-        toggleActions: "play none reverse none",
-        scrub: 0.3,
-      },
-    });
-
-    const containerTween = gsap.to(navContainer, {
-      paddingTop: "0.75rem",
-      paddingBottom: "0.75rem",
-      duration: 0.6,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: document.documentElement,
-        start: "top -20",
-        end: "bottom top",
-        toggleActions: "play none reverse none",
-        scrub: 0.3,
-      },
-    });
+    if (!logoBox || !logoText || !tagline) return;
 
     const logoBoxTween = gsap.to(logoBox, {
       width: "2.5rem",
@@ -110,8 +92,6 @@ const Navbar: React.FC = () => {
     });
 
     return () => {
-      navTween.kill();
-      containerTween.kill();
       logoBoxTween.kill();
       logoTextTween.kill();
       taglineTween.kill();
@@ -119,16 +99,15 @@ const Navbar: React.FC = () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
+  ``;
 
   return (
     <header
-      ref={navRef}
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-white backdrop-blur-md"
+      className={`fixed top-0 left-0 right-0 z-50 transform transition-transform duration-500 bg-white backdrop-blur-md shadow-md ${
+        showNav ? "translate-y-0" : "-translate-y-full"
+      }`}
     >
-      <nav
-        ref={navContainerRef}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4"
-      >
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center group cursor-pointer">
             <div
@@ -146,7 +125,7 @@ const Navbar: React.FC = () => {
                 ref={logoTextRef}
                 className="text-2xl font-black bg-gradient-to-r from-orange-600 via-red-500 to-pink-600 bg-clip-text text-transparent italic"
               >
-                SchoolMeal
+                EduMeal
               </span>
               <span
                 ref={taglineRef}
