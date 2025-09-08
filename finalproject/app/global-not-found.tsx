@@ -1,17 +1,11 @@
 'use client";';
 import "./globals.css";
 import { Inter } from "next/font/google";
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import ButtonRedirect from "@/app/components/ButtonRedirect"
+import ButtonRedirect from "@/components/ButtonRedirect"
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "404 - Trang không tồn tại",
-  description: "Trang bạn đang tìm kiếm không tồn tại hoặc đã được di chuyển.",
-};
 
 export default function GlobalNotFound() {
   return (

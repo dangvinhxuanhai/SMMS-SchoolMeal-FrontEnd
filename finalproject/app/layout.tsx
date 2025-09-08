@@ -1,10 +1,8 @@
 import "./globals.css";
-import { Merriweather } from "next/font/google";
+import type React from "react";
 import type { Metadata } from "next";
-import { LoadingProvider } from "@/context/LoadingContext";
-import RouteLoaderOverlay from "@/components/RouteLoaderOverlay";
-import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
+import { Merriweather } from "next/font/google";
+import ClientLayout from "./ClientLayout";
 
 const merriweather = Merriweather({
   subsets: ["latin"],
@@ -29,19 +27,7 @@ export default function RootLayout({
         style={{ fontFamily: "var(--font-merriweather)" }}
         suppressHydrationWarning
       >
-        <LoadingProvider>
-          <div
-            className="relative min-h-screen flex flex-col"
-            style={{
-              background: "linear-gradient(135deg, #D3CAE2, #E6C17A)",
-            }}
-          >
-            <Navbar />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
-          <RouteLoaderOverlay />
-        </LoadingProvider>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

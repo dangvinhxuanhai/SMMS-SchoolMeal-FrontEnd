@@ -1,27 +1,8 @@
 "use client";
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 import { User, Lock, Sparkles, Check, Eye, EyeOff } from "lucide-react";
-
-const registerSchema = z
-  .object({
-    phone: z
-      .string()
-      .min(9, "Phone must be at least 9 digits")
-      .regex(/^[0-9]+$/, "Phone must only contain numbers"),
-    password: z.string().min(6, "Password must be at least 6 characters long"),
-    confirmPassword: z
-      .string()
-      .min(6, "Confirm password must be at least 6 characters long"),
-  })
-  .refine((data) => data.password === data.confirmPassword, {
-    message: "Passwords do not match",
-    path: ["confirmPassword"],
-  });
-
-type RegisterFormData = z.infer<typeof registerSchema>;
+import { useRegisterForm, RegisterFormData } from "@/hooks/useRegisterForm";
+import { useRegisterMutation } from "@/hooks/useRegisterMutation";
 
 const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -30,16 +11,25 @@ const RegisterForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm<RegisterFormData>({
-    resolver: zodResolver(registerSchema),
+    formState: { errors },
+    reset,
+  } = useRegisterForm();
+
+  const mutation = useRegisterMutation({
+    onSuccess: (data) => {
+      setIsSuccess(true);
+      reset();
+      setTimeout(() => setIsSuccess(false), 3000);
+    },
+    onError: (error) => {
+      console.log("Handling error in component:", error.message);
+    },
   });
 
-  const onSubmit = async (data: RegisterFormData) => {
-    console.log("Form data:", data);
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    setIsSuccess(true);
-    setTimeout(() => setIsSuccess(false), 3000);
+  const onSubmit = (data: RegisterFormData) => {
+    console.log("Form submitted:", data);
+    const { confirmPassword, ...submitData } = data;
+    mutation.mutate(submitData);
   };
 
   return (
@@ -68,6 +58,16 @@ const RegisterForm = () => {
             </div>
           )}
 
+          {mutation.error && (
+            <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-xl">
+              <p className="text-red-600 text-sm">
+                {mutation.error instanceof Error
+                  ? mutation.error.message
+                  : "Registration failed. Please try again."}
+              </p>
+            </div>
+          )}
+
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div className="relative">
               <User
@@ -79,7 +79,7 @@ const RegisterForm = () => {
                 type="text"
                 {...register("phone")}
                 placeholder="Enter your phone number"
-                disabled={isSubmitting}
+                disabled={mutation.isPending}
                 className={`block w-full pl-10 pr-3 py-3 border-2 rounded-xl ${
                   errors.phone
                     ? "border-red-300 focus:border-red-500"
@@ -103,7 +103,7 @@ const RegisterForm = () => {
                 type={showPassword ? "text" : "password"}
                 {...register("password")}
                 placeholder="Create a strong password"
-                disabled={isSubmitting}
+                disabled={mutation.isPending}
                 className={`block w-full pl-10 pr-10 py-3 border-2 rounded-xl ${
                   errors.password
                     ? "border-red-300 focus:border-red-500"
@@ -138,7 +138,7 @@ const RegisterForm = () => {
                 type="password"
                 {...register("confirmPassword")}
                 placeholder="Confirm your password"
-                disabled={isSubmitting}
+                disabled={mutation.isPending}
                 className={`block w-full pl-10 pr-3 py-3 border-2 rounded-xl ${
                   errors.confirmPassword
                     ? "border-red-300 focus:border-red-500"
@@ -154,14 +154,16 @@ const RegisterForm = () => {
 
             <button
               type="submit"
-              disabled={isSubmitting}
+              disabled={mutation.isPending}
               className={`w-full py-4 px-4 text-white font-semibold rounded-xl transition-all duration-300 ${
-                isSubmitting
+                mutation.isPending
                   ? "bg-gray-400 cursor-not-allowed"
                   : "bg-gradient-to-r from-indigo-600 to-purple-600 hover:scale-[1.02]"
               }`}
             >
-              {isSubmitting ? "Creating your account..." : "Create Account"}
+              {mutation.isPending
+                ? "Creating your account..."
+                : "Create Account"}
             </button>
           </form>
         </div>
