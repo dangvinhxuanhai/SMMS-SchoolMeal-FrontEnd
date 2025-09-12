@@ -5,13 +5,10 @@ import { LoginForm } from "@/app/(auth)/login/login-form";
 export default function LoginPage() {
   return (
     <div className="grid min-h-screen lg:grid-cols-2">
-      {/* Left Panel - Login Form */}
       <div className="relative flex flex-col gap-4 p-6 md:p-10 bg-gradient-to-br from-slate-50 via-white to-blue-50">
-        {/* Animated Background Elements */}
         <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-br from-blue-400/10 to-purple-400/10 rounded-full blur-3xl -translate-x-36 -translate-y-36 animate-pulse"></div>
         <div className="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-full blur-3xl translate-x-24 translate-y-24 animate-pulse animation-delay-1000"></div>
 
-        {/* Header with Logo */}
         <div className="relative z-10 flex justify-center gap-2 md:justify-start">
           <a
             href="#"
@@ -26,15 +23,11 @@ export default function LoginPage() {
           </a>
         </div>
 
-        {/* Login Form Container */}
         <div className="relative z-10 flex flex-1 items-center justify-center">
           <div className="w-full max-w-md">
-            {/* Glass Card Effect */}
             <div className="relative overflow-hidden rounded-3xl bg-white/80 backdrop-blur-xl border border-white/20 shadow-2xl shadow-blue-500/10 p-8">
-              {/* Subtle gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600/3 via-purple-600/3 to-pink-600/3 pointer-events-none"></div>
 
-              {/* Small decorative elements */}
               <div className="absolute top-4 right-4 w-16 h-16 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-2xl"></div>
               <div className="absolute bottom-4 left-4 w-12 h-12 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-xl"></div>
 
@@ -43,18 +36,14 @@ export default function LoginPage() {
           </div>
         </div>
 
-        {/* Bottom decorative text */}
         <div className="relative z-10 text-center text-xs text-gray-500 mt-4">
           <p>Secure • Fast • Reliable</p>
         </div>
       </div>
 
-      {/* Right Panel - Hero Image */}
       <div className="relative hidden lg:block overflow-hidden h-full">
-        {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-purple-900/80 to-indigo-900/90 z-10"></div>
 
-        {/* Pattern Overlay */}
         <div className="absolute inset-0 z-20 opacity-10">
           <svg width="100%" height="100%" className="absolute inset-0">
             <defs>
@@ -76,14 +65,11 @@ export default function LoginPage() {
           </svg>
         </div>
 
-        {/* Hero Content */}
         <div className="relative z-30 h-full flex flex-col items-center justify-center p-12 text-center text-white">
-          {/* Floating Elements */}
           <div className="absolute top-20 left-20 w-20 h-20 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20 rotate-12 animate-float"></div>
           <div className="absolute top-40 right-32 w-16 h-16 bg-blue-500/20 rounded-full animate-float animation-delay-500"></div>
           <div className="absolute bottom-32 left-16 w-12 h-12 bg-purple-500/20 rounded-lg rotate-45 animate-float animation-delay-1000"></div>
 
-          {/* Main Content */}
           <div className="max-w-md space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
@@ -122,7 +108,6 @@ export default function LoginPage() {
           </div>
         </div>
 
-        {/* Background Image (subtle) */}
         <div className="absolute inset-0 opacity-20">
           <div className="w-full h-full bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-800"></div>
         </div>
@@ -131,7 +116,6 @@ export default function LoginPage() {
   );
 }
 
-// CSS for custom animations (add to your global CSS)
 const styles = `
 @keyframes float {
   0%, 100% { transform: translateY(0px) rotate(0deg); }

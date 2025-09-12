@@ -23,7 +23,6 @@ export function LoginForm({
       className={cn("flex flex-col gap-6 w-full", className)}
       {...props}
     >
-      {/* Header */}
       <div className="flex flex-col items-center gap-3 text-center">
         <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mb-2 shadow-lg shadow-blue-500/25 transform rotate-1 hover:rotate-3 transition-transform duration-300">
           <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
@@ -80,7 +79,6 @@ export function LoginForm({
           </div>
         </div>
 
-        {/* Password Field */}
         <div className="space-y-2">
           <div className="flex items-center justify-between">
             <Label
@@ -128,7 +126,6 @@ export function LoginForm({
           </div>
         </div>
 
-        {/* Login Button */}
         <Button
           type="submit"
           disabled={isLoading}
@@ -145,7 +142,6 @@ export function LoginForm({
           )}
         </Button>
 
-        {/* Divider */}
         <div className="relative flex items-center">
           <div className="flex-1 border-t border-gray-200"></div>
           <span className="mx-4 text-sm text-gray-500 bg-white px-2">
@@ -154,7 +150,6 @@ export function LoginForm({
           <div className="flex-1 border-t border-gray-200"></div>
         </div>
 
-        {/* GitHub Button */}
         <Button
           type="button"
           variant="outline"
@@ -173,7 +168,6 @@ export function LoginForm({
         </Button>
       </div>
 
-      {/* Sign Up Link */}
       <div className="text-center text-sm text-gray-600">
         Don't have an account?{" "}
         <a

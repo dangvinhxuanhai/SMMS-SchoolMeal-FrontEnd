@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
 
   const navigationItems: NavigationItem[] = [
     { label: "Trang chủ", href: "/" },
-    { label: "Thực đơn", href: "/food-gallery" },
+    { label: "Thực đơn", href: "/menu" },
     { label: "Về SchoolMeal", href: "/about" },
     { label: "Liên hệ", href: "/contact" },
   ];
